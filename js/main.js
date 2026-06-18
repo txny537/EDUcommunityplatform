@@ -1,4 +1,6 @@
-// Live Search Filter for Courses Page
+// ================================
+// LIVE SEARCH & FILTER - Courses
+// ================================
 const searchInput = document.getElementById('courseSearch');
 const filterBtns = document.querySelectorAll('.filter-btn');
 const courseCards = document.querySelectorAll('.course-card');
@@ -45,3 +47,23 @@ filterBtns.forEach(btn => {
     filterCourses();
   });
 });
+
+// ================================
+// DARK MODE TOGGLE
+// ================================
+const darkModeBtn = document.getElementById('darkModeToggle');
+
+if (darkModeBtn) {
+  // Load saved preference
+  if (localStorage.getItem('darkMode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+    darkModeBtn.textContent = '☀️';
+  }
+
+  darkModeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    darkModeBtn.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+  });
+}
