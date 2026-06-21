@@ -111,3 +111,42 @@ galleryFilters.forEach(btn => {
     });
   });
 });
+
+// ================================
+// FAQ SEARCH
+// hides questions that don't match
+// what the user is typing
+// ================================
+const faqSearch = document.getElementById('faqSearch');
+// gets all accordion FAQ items
+const faqItems = document.querySelectorAll('.faq-item');
+const faqNoResults = document.getElementById('faqNoResults');
+
+if (faqSearch) {
+  faqSearch.addEventListener('input', () => {
+    // get what user typed in lowercase
+    const term = faqSearch.value.toLowerCase();
+    let visibleCount = 0;
+
+    faqItems.forEach(item => {
+      // get the question text from the button
+      const question = item.querySelector('.accordion-button').textContent.toLowerCase();
+      // get the answer text from the body
+      const answer = item.querySelector('.accordion-body').textContent.toLowerCase();
+
+      // show item if question OR answer contains the search term
+      if (question.includes(term) || answer.includes(term)) {
+        item.style.display = 'block';
+        visibleCount++;
+      } else {
+        // hide item if it doesnt match
+        item.style.display = 'none';
+      }
+    });
+
+    // show no results message if nothing matched
+    if (faqNoResults) {
+      faqNoResults.classList.toggle('d-none', visibleCount > 0);
+    }
+  });
+}
