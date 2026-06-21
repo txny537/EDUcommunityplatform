@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQ - EduConnect</title>
+  <!-- Bootstrap CSS - styling and grid -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Our custom CSS -->
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR - "active" is on FAQ link since we are on this page -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-4" href="index.html">🎓 EduConnect</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <!-- active = highlighted because we are on this page -->
+          <li class="nav-item"><a class="nav-link active" href="faq.html">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER - gradient banner -->
+  <section class="text-white text-center py-5" style="background: linear-gradient(135deg, #0d6efd, #6610f2);">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Frequently Asked Questions</h1>
+      <p class="lead">Everything you need to know about EduConnect.</p>
+    </div>
+  </section>
+
+  <!-- FAQ SEARCH - lets user search for a question -->
+  <section class="py-4 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <!-- input fires the faqSearch function as user types -->
+          <input type="text" id="faqSearch" class="form-control form-control-lg"
+            placeholder="🔍 Search questions..."/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ ACCORDION - clicking a question expands the answer -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+
+          <!-- accordion = Bootstrap component where only one item opens at a time -->
+          <div class="accordion" id="faqAccordion">
+
+            <!-- FAQ ITEM 1 -->
+            <div class="accordion-item faq-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden">
+              <!-- accordion-header is the clickable question -->
+              <h2 class="accordion-header">
+                <!-- data-bs-target links to the answer div below -->
+                <button class="accordion-button fw-bold" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#faq1">
+                  Is EduConnect completely free?
+                </button>
+              </h2>
+              <!-- accordion-collapse is the answer that shows/hides -->
+              <!-- "show" means this one is open by default -->
+              <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted">
+                  Yes! All core courses, materials and community features on EduConnect are
+                  completely free. We believe education should be accessible to everyone regardless
+                  of financial background. Optional premium certificates may have a small fee in future.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ ITEM 2 -->
+            <div class="accordion-item faq-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#faq2">
+                  Do I need any prior experience to join?
+                </button>
+              </h2>
+              <!-- no "show" class = this one is closed by default -->
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted">
+                  Not at all! We have courses for complete beginners all the way to advanced learners.
+                  Each course clearly states the level required so you can find the right starting point.
+                  Our beginner courses assume zero prior knowledge.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ ITEM 3 -->
+            <div class="accordion-item faq-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#faq3">
+                  How do I enroll in a course?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted">
+                  Simply visit our Courses page, find a course you like and click "Enroll Free".
+                  You will be directed to fill in a short registration form. Once submitted, you will
+                  receive a confirmation email with access details within 24 hours.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ ITEM 4 -->
+            <div class="accordion-item faq-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#faq4">
+                  Will I get a certificate after completing a course?
+                </button>
+              </h2>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted">
+                  Yes! Upon successfully completing a course and passing the final assessment,
+                  you will receive a digital certificate from EduConnect. This certificate can be
+                  shared on LinkedIn or added to your CV to showcase your skills to employers.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ ITEM 5 -->
+            <div class="accordion-item faq-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#faq5">
+                  How long does each course take?
+                </button>
+              </h2>
+              <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted">
+                  Course duration varies between 4 to 10 weeks depending on the topic and level.
+                  All courses are self-paced meaning you can learn on your own schedule.
+                  Most students spend around 5-8 hours per week on their coursework.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ ITEM 6 -->
+            <div class="accordion-item faq-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#faq6">
+                  Can I interact with instructors?
+                </button>
+              </h2>
+              <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted">
+                  Absolutely! Each course has a dedicated discussion forum where you can ask
+                  questions and get answers from instructors and fellow students. We also host
+                  monthly live Q&A sessions with our instructors via video call.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ ITEM 7 -->
+            <div class="accordion-item faq-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#faq7">
+                  Is EduConnect available on mobile?
+                </button>
+              </h2>
+              <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted">
+                  Yes! EduConnect is fully responsive and works on all devices including phones,
+                  tablets and desktops. You can learn on the go from any device with a browser
+                  and internet connection. No app download required.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ ITEM 8 -->
+            <div class="accordion-item faq-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#faq8">
+                  How do I contact support?
+                </button>
+              </h2>
+              <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted">
+                  You can reach our support team through the Contact page on this website.
+                  Fill in the contact form and we will get back to you within 24 hours.
+                  You can also email us directly at hello@educonnect.org.
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- no results message shown by JavaScript when search finds nothing -->
+          <div id="faqNoResults" class="text-center py-4 d-none">
+            <div class="fs-1">🤔</div>
+            <h5 class="text-muted">No questions found. Try a different search!</h5>
+            <a href="contact.html" class="btn btn-primary mt-2">Ask Us Directly</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA - call to action encouraging user to contact -->
+  <section class="py-5 bg-light">
+    <div class="container text-center">
+      <h3 class="fw-bold mb-2">Still have questions?</h3>
+      <p class="text-muted mb-4">Our team is happy to help. Reach out to us anytime!</p>
+      <!-- links to contact page -->
+      <a href="contact.html" class="btn btn-primary btn-lg px-5">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- FOOTER - same on every page -->
+  <footer class="bg-dark text-white pt-4 pb-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">🎓 EduConnect</h5>
+          <p class="text-muted small">Empowering communities through accessible education since 2024.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h6 class="fw-bold">Quick Links</h6>
+          <ul class="list-unstyled">
+            <li><a href="about.html" class="text-muted text-decoration-none">About Us</a></li>
+            <li><a href="courses.html" class="text-muted text-decoration-none">Courses</a></li>
+            <li><a href="blog.html" class="text-muted text-decoration-none">Blog</a></li>
+            <li><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h6 class="fw-bold">Contact</h6>
+          <p class="text-muted small">📧 hello@educonnect.org<br>📍 Nairobi, Kenya<br>📞 +254 700 000 000</p>
+        </div>
+      </div>
+      <hr class="border-secondary"/>
+      <p class="text-center text-muted small mb-0">&copy; 2026 EduConnect. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Dark mode button fixed to bottom right -->
+  <button id="darkModeToggle" title="Toggle Dark Mode">🌙</button>
+
+  <!-- Bootstrap JS - needed for accordion to open and close -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
