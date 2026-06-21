@@ -150,3 +150,87 @@ if (faqSearch) {
     }
   });
 }
+
+// ================================
+// CONTACT FORM VALIDATION
+// checks all fields before submit
+// shows error or success message
+// ================================
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    // stop page from refreshing on submit
+    e.preventDefault();
+
+    // get all field values
+    const name = document.getElementById('contactName').value.trim();
+    const email = document.getElementById('contactEmail').value.trim();
+    const subject = document.getElementById('contactSubject').value;
+    const message = document.getElementById('contactMessage').value.trim();
+
+    // get all input elements
+    const nameInput = document.getElementById('contactName');
+    const emailInput = document.getElementById('contactEmail');
+    const subjectInput = document.getElementById('contactSubject');
+    const messageInput = document.getElementById('contactMessage');
+
+    // reset previous validation styles
+    [nameInput, emailInput, subjectInput, messageInput].forEach(input => {
+      input.classList.remove('is-invalid', 'is-valid');
+    });
+
+    let isValid = true;
+
+    // check name is not empty
+    if (name === '') {
+      nameInput.classList.add('is-invalid'); // red border
+      isValid = false;
+    } else {
+      nameInput.classList.add('is-valid'); // green border
+    }
+
+    // check email has @ and . in it
+    if (!email.includes('@') || !email.includes('.')) {
+      emailInput.classList.add('is-invalid');
+      isValid = false;
+    } else {
+      emailInput.classList.add('is-valid');
+    }
+
+    // check subject is selected
+    if (subject === '') {
+      subjectInput.classList.add('is-invalid');
+      isValid = false;
+    } else {
+      subjectInput.classList.add('is-valid');
+    }
+
+    // check message is at least 10 characters
+    if (message.length < 10) {
+      messageInput.classList.add('is-invalid');
+      isValid = false;
+    } else {
+      messageInput.classList.add('is-valid');
+    }
+
+    // get success and error message elements
+    const successMsg = document.getElementById('successMsg');
+    const errorMsg = document.getElementById('errorMsg');
+
+    if (isValid) {
+      // hide error, show success message
+      errorMsg.classList.add('d-none');
+      successMsg.classList.remove('d-none');
+      // clear the form after successful submit
+      contactForm.reset();
+      [nameInput, emailInput, subjectInput, messageInput].forEach(input => {
+        input.classList.remove('is-valid');
+      });
+    } else {
+      // hide success, show error message
+      successMsg.classList.add('d-none');
+      errorMsg.classList.remove('d-none');
+    }
+  });
+}
