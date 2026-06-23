@@ -14,13 +14,13 @@
   <!-- NAVBAR - same on every page, just change which link has "active" -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
     <div class="container">
-      <!-- Brand/logo -->
+      <!-- Brand/logo on the left -->
       <a class="navbar-brand fw-bold fs-4" href="index.html">🎓 EduConnect</a>
-      <!-- Hamburger button for mobile -->
+      <!-- Hamburger button - appears on mobile when navbar collapses -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <!-- Nav links -->
+      <!-- Nav links - collapse into hamburger on mobile -->
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto gap-1">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -36,7 +36,7 @@
     </div>
   </nav>
 
-  <!-- PAGE HEADER - gradient banner -->
+  <!-- PAGE HEADER - gradient banner at top -->
   <section class="text-white text-center py-5" style="background: linear-gradient(135deg, #0d6efd, #6610f2);">
     <div class="container">
       <h1 class="display-4 fw-bold">Our Gallery</h1>
@@ -47,9 +47,9 @@
   <!-- FILTER BUTTONS - user clicks to filter gallery by category -->
   <section class="py-4 bg-light">
     <div class="container">
-      <!-- justify-content-center centers the buttons -->
+      <!-- justify-content-center centers the buttons horizontally -->
       <div class="d-flex gap-2 flex-wrap justify-content-center">
-        <!-- data-filter tells JavaScript which cards to show -->
+        <!-- data-filter value is read by JavaScript to show/hide cards -->
         <button class="btn btn-primary gallery-filter active" data-filter="all">All</button>
         <button class="btn btn-outline-primary gallery-filter" data-filter="events">Events</button>
         <button class="btn btn-outline-success gallery-filter" data-filter="workshops">Workshops</button>
@@ -58,19 +58,24 @@
     </div>
   </section>
 
-  <!-- GALLERY GRID -->
+  <!-- GALLERY GRID - 9 cards in a 3 column responsive grid -->
   <section class="py-5">
     <div class="container">
+      <!-- row g-4 creates grid with gaps between cards -->
       <div class="row g-4" id="galleryGrid">
 
         <!-- CARD 1 - Events -->
-        <!-- col-md-4 = 3 per row on desktop, col-sm-6 = 2 per row on tablet -->
+        <!-- col-md-4 = 3 columns on desktop, col-sm-6 = 2 columns on tablet -->
         <div class="col-md-4 col-sm-6 gallery-item" data-category="events">
           <div class="card border-0 shadow-sm overflow-hidden">
-            <!-- picsum.photos gives free random photos, number at end changes the image -->
-            <img src="https://picsum.photos/400/250?random=10" class="card-img-top" alt="Annual Learning Summit"/>
+            <!-- LOCAL IMAGE - stored in images/ folder -->
+            <!-- object-fit cover makes image fill the space without stretching -->
+            <img src="images/summit.jpg"
+              class="card-img-top"
+              style="height: 200px; object-fit: cover;"
+              alt="Annual Learning Summit"/>
             <div class="card-body">
-              <!-- badge = small coloured label -->
+              <!-- badge = small coloured label showing category -->
               <span class="badge bg-primary mb-1">Event</span>
               <h6 class="card-title fw-bold">Annual Learning Summit 2026</h6>
               <p class="text-muted small">Over 500 students gathered for our biggest event of the year.</p>
@@ -81,7 +86,11 @@
         <!-- CARD 2 - Workshops -->
         <div class="col-md-4 col-sm-6 gallery-item" data-category="workshops">
           <div class="card border-0 shadow-sm overflow-hidden">
-            <img src="https://picsum.photos/400/250?random=20" class="card-img-top" alt="Web Dev Workshop"/>
+            <!-- LOCAL IMAGE - web development bootcamp photo -->
+            <img src="images/webdev-bootcamp.jpg"
+              class="card-img-top"
+              style="height: 200px; object-fit: cover;"
+              alt="Web Development Bootcamp"/>
             <div class="card-body">
               <span class="badge bg-success mb-1">Workshop</span>
               <h6 class="card-title fw-bold">Web Development Bootcamp</h6>
@@ -93,7 +102,11 @@
         <!-- CARD 3 - Graduation -->
         <div class="col-md-4 col-sm-6 gallery-item" data-category="graduation">
           <div class="card border-0 shadow-sm overflow-hidden">
-            <img src="https://picsum.photos/400/250?random=30" class="card-img-top" alt="Graduation Ceremony"/>
+            <!-- LOCAL IMAGE - graduation ceremony photo -->
+            <img src="images/graduation.jpg"
+              class="card-img-top"
+              style="height: 200px; object-fit: cover;"
+              alt="Class of 2025 Graduation"/>
             <div class="card-body">
               <span class="badge bg-warning text-dark mb-1">Graduation</span>
               <h6 class="card-title fw-bold">Class of 2025 Graduation</h6>
@@ -105,7 +118,11 @@
         <!-- CARD 4 - Events -->
         <div class="col-md-4 col-sm-6 gallery-item" data-category="events">
           <div class="card border-0 shadow-sm overflow-hidden">
-            <img src="https://picsum.photos/400/250?random=40" class="card-img-top" alt="Community Meetup"/>
+            <!-- LOCAL IMAGE - community meetup photo -->
+            <img src="images/community-meetup.jpg"
+              class="card-img-top"
+              style="height: 200px; object-fit: cover;"
+              alt="Nairobi Community Meetup"/>
             <div class="card-body">
               <span class="badge bg-danger mb-1">Event</span>
               <h6 class="card-title fw-bold">Nairobi Community Meetup</h6>
@@ -117,7 +134,11 @@
         <!-- CARD 5 - Workshops -->
         <div class="col-md-4 col-sm-6 gallery-item" data-category="workshops">
           <div class="card border-0 shadow-sm overflow-hidden">
-            <img src="https://picsum.photos/400/250?random=50" class="card-img-top" alt="Data Science Workshop"/>
+            <!-- LOCAL IMAGE - data science masterclass photo -->
+            <img src="images/data-science.jpg"
+              class="card-img-top"
+              style="height: 200px; object-fit: cover;"
+              alt="Data Science Masterclass"/>
             <div class="card-body">
               <span class="badge bg-info mb-1">Workshop</span>
               <h6 class="card-title fw-bold">Data Science Masterclass</h6>
@@ -129,8 +150,13 @@
         <!-- CARD 6 - Graduation -->
         <div class="col-md-4 col-sm-6 gallery-item" data-category="graduation">
           <div class="card border-0 shadow-sm overflow-hidden">
-            <img src="https://picsum.photos/400/250?random=60" class="card-img-top" alt="Certificate Ceremony"/>
+            <!-- LOCAL IMAGE - certificate ceremony photo -->
+            <img src="images/certificate-ceremony.jpg"
+              class="card-img-top"
+              style="height: 200px; object-fit: cover;"
+              alt="Certificate Award Ceremony"/>
             <div class="card-body">
+              <!-- inline style used for custom purple colour -->
               <span class="badge mb-1" style="background:#6610f2; color:white;">Graduation</span>
               <h6 class="card-title fw-bold">Certificate Award Ceremony</h6>
               <p class="text-muted small">Proud graduates receiving their EduConnect certificates.</p>
@@ -141,7 +167,11 @@
         <!-- CARD 7 - Events -->
         <div class="col-md-4 col-sm-6 gallery-item" data-category="events">
           <div class="card border-0 shadow-sm overflow-hidden">
-            <img src="https://picsum.photos/400/250?random=70" class="card-img-top" alt="Open Day"/>
+            <!-- LOCAL IMAGE - open day photo -->
+            <img src="images/open-day.png"
+              class="card-img-top"
+              style="height: 200px; object-fit: cover;"
+              alt="EduConnect Open Day"/>
             <div class="card-body">
               <span class="badge bg-primary mb-1">Event</span>
               <h6 class="card-title fw-bold">EduConnect Open Day</h6>
@@ -153,7 +183,11 @@
         <!-- CARD 8 - Workshops -->
         <div class="col-md-4 col-sm-6 gallery-item" data-category="workshops">
           <div class="card border-0 shadow-sm overflow-hidden">
-            <img src="https://picsum.photos/400/250?random=80" class="card-img-top" alt="Design Workshop"/>
+            <!-- LOCAL IMAGE - ui/ux design workshop photo -->
+            <img src="images/uiux-workshop.jpg"
+              class="card-img-top"
+              style="height: 200px; object-fit: cover;"
+              alt="UI/UX Design Workshop"/>
             <div class="card-body">
               <span class="badge bg-warning text-dark mb-1">Workshop</span>
               <h6 class="card-title fw-bold">UI/UX Design Workshop</h6>
@@ -165,7 +199,11 @@
         <!-- CARD 9 - Graduation -->
         <div class="col-md-4 col-sm-6 gallery-item" data-category="graduation">
           <div class="card border-0 shadow-sm overflow-hidden">
-            <img src="https://picsum.photos/400/250?random=90" class="card-img-top" alt="Top Students Award"/>
+            <!-- LOCAL IMAGE - awards night photo -->
+            <img src="images/awards-night.jpg"
+              class="card-img-top"
+              style="height: 200px; object-fit: cover;"
+              alt="Top Students Awards Night"/>
             <div class="card-body">
               <span class="badge bg-success mb-1">Graduation</span>
               <h6 class="card-title fw-bold">Top Students Awards Night</h6>
@@ -188,7 +226,7 @@
         </div>
         <div class="col-md-4 mb-3">
           <h6 class="fw-bold">Quick Links</h6>
-          <!-- list-unstyled removes bullet points -->
+          <!-- list-unstyled removes default bullet points -->
           <ul class="list-unstyled">
             <li><a href="about.html" class="text-muted text-decoration-none">About Us</a></li>
             <li><a href="courses.html" class="text-muted text-decoration-none">Courses</a></li>
@@ -207,7 +245,7 @@
     </div>
   </footer>
 
-  <!-- Dark mode button - position fixed to bottom right via CSS -->
+  <!-- Dark mode button - fixed to bottom right corner via CSS -->
   <button id="darkModeToggle" title="Toggle Dark Mode">🌙</button>
 
   <!-- Bootstrap JS - needed for navbar to collapse on mobile -->
