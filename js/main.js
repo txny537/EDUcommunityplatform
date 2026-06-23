@@ -234,3 +234,64 @@ if (contactForm) {
     }
   });
 }
+
+// ================================
+// BACK TO TOP BUTTON
+// shows button when user scrolls
+// down, hides when at the top
+// ================================
+const backToTopBtn = document.getElementById('backToTop');
+
+// listen for scroll events on the page
+window.addEventListener('scroll', () => {
+  // show button when user scrolls down 300px
+  if (window.scrollY > 300) {
+    backToTopBtn.style.display = 'block';
+  } else {
+    // hide button when near the top
+    backToTopBtn.style.display = 'none';
+  }
+
+  // add shadow to navbar when scrolled
+  const navbar = document.querySelector('.navbar');
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled'); // CSS adds shadow
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// when button clicked scroll smoothly back to top
+if (backToTopBtn) {
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+// ================================
+// AUTO ACTIVE NAVBAR LINK
+// automatically highlights the
+// correct navbar link based on
+// which page you are on
+// ================================
+const currentPage = window.location.pathname.split('/').pop();
+// gets all navbar links
+const navLinks = document.querySelectorAll('.nav-link');
+
+navLinks.forEach(link => {
+  // get the filename from each link e.g "about.html"
+  const linkPage = link.getAttribute('href');
+
+  // remove active from all links first
+  link.classList.remove('active');
+
+  // add active to link that matches current page
+  if (linkPage === currentPage) {
+    link.classList.add('active');
+  }
+
+  // special case for homepage - pathname is empty
+  if (currentPage === '' && linkPage === 'index.html') {
+    link.classList.add('active');
+  }
+});
