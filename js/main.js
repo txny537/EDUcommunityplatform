@@ -295,3 +295,30 @@ navLinks.forEach(link => {
     link.classList.add('active');
   }
 });
+// ================================
+// AUTO ACTIVE NAVBAR LINK
+// automatically highlights the
+// correct navbar link based on
+// which page you are on
+// ================================
+const currentPage = window.location.pathname.split('/').pop();
+// gets all navbar links
+const navLinks = document.querySelectorAll('.nav-link');
+
+navLinks.forEach(link => {
+  // get the filename from each link e.g "about.html"
+  const linkPage = link.getAttribute('href');
+
+  // remove active from all links first
+  link.classList.remove('active');
+
+  // add active to link that matches current page
+  if (linkPage === currentPage) {
+    link.classList.add('active');
+  }
+
+  // special case for homepage
+  if (currentPage === '' && linkPage === 'index.html') {
+    link.classList.add('active');
+  }
+});
