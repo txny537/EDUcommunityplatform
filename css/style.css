@@ -2,7 +2,7 @@
    EDUCONNECT - Global Styles
 ================================ */
 
-/* Fonts */
+/* Fonts - loads Poppins from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 body {
@@ -42,6 +42,8 @@ body {
 .card {
   border-radius: 12px !important;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* fade in animation plays when card appears */
+  animation: fadeIn 0.4s ease-in-out;
 }
 
 .card:hover {
@@ -113,6 +115,7 @@ body.dark-mode .border {
 
 /* ================================
    DARK MODE TOGGLE BUTTON
+   fixed circle button bottom right
 ================================ */
 #darkModeToggle {
   position: fixed;
@@ -136,7 +139,77 @@ body.dark-mode .border {
 }
 
 /* ================================
+   SMOOTH SCROLL
+   makes page scroll smoothly
+   instead of jumping instantly
+================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ================================
+   FADE IN ANIMATION
+   cards and elements fade in
+   when the page loads
+================================ */
+@keyframes fadeIn {
+  /* starts invisible and slightly below */
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  /* ends fully visible in normal position */
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   NAVBAR SHADOW ON SCROLL
+   adds shadow to navbar when
+   user scrolls down the page
+   class added by JavaScript
+================================ */
+.navbar.scrolled {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+/* ================================
+   BACK TO TOP BUTTON
+   fixed purple button bottom right
+   appears after scrolling 300px
+   sits above the dark mode button
+================================ */
+#backToTop {
+  position: fixed;
+  bottom: 85px; /* sits above dark mode button */
+  right: 25px;
+  z-index: 9999;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.2rem;
+  background-color: #6610f2;
+  color: white;
+  border: none;
+  cursor: pointer;
+  /* hidden by default - JS shows it on scroll */
+  display: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: all 0.2s ease;
+}
+
+/* hover effect - slightly bigger on hover */
+#backToTop:hover {
+  background-color: #520dc2;
+  transform: scale(1.1);
+}
+
+/* ================================
    RESPONSIVE TWEAKS
+   adjusts font sizes on mobile
 ================================ */
 @media (max-width: 768px) {
   .hero-section h1 {
