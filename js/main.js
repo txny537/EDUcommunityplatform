@@ -345,3 +345,25 @@ if (cookieBanner) {
     });
   }
 }
+// ================================
+// GALLERY SEARCH
+// hides gallery cards that dont
+// match what user is typing
+// ================================
+const gallerySearch = document.getElementById('gallerySearch');
+
+if (gallerySearch) {
+  gallerySearch.addEventListener('input', () => {
+    const term = gallerySearch.value.toLowerCase();
+
+    galleryItems.forEach(item => {
+      // get title text from card
+      const title = item.querySelector('.card-title').textContent.toLowerCase();
+      if (title.includes(term)) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+}
