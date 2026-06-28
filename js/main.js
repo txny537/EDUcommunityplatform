@@ -322,3 +322,26 @@ navLinks.forEach(link => {
     link.classList.add('active');
   }
 });
+// ================================
+// COOKIE CONSENT BANNER
+// shows banner until user accepts
+// saves acceptance to localStorage
+// ================================
+const cookieBanner = document.getElementById('cookieBanner');
+const acceptCookies = document.getElementById('acceptCookies');
+
+if (cookieBanner) {
+  // hide banner if already accepted before
+  if (localStorage.getItem('cookiesAccepted')) {
+    cookieBanner.style.display = 'none';
+  }
+
+  // hide banner when user clicks accept
+  if (acceptCookies) {
+    acceptCookies.addEventListener('click', () => {
+      cookieBanner.style.display = 'none';
+      // save so banner doesnt show again
+      localStorage.setItem('cookiesAccepted', 'true');
+    });
+  }
+}

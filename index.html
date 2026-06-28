@@ -187,35 +187,33 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- FOOTER - same on every page -->
   <footer class="bg-dark text-white pt-4 pb-3">
     <div class="container">
       <div class="row">
         <div class="col-md-4 mb-3">
-          <h5 class="fw-bold">🎓 EduConnect</h5>
-          <p class="text-muted small">Empowering communities through accessible education since 2024.</p>
+          <h5 class="fw-bold text-white">🎓 EduConnect</h5>
+          <!-- changed text-muted to text-light so it's more visible -->
+          <p class="text-light small">Empowering communities through accessible education since 2024.</p>
         </div>
         <div class="col-md-4 mb-3">
-          <h6 class="fw-bold">Quick Links</h6>
+          <h6 class="fw-bold text-white">Quick Links</h6>
           <ul class="list-unstyled">
-            <li><a href="about.html" class="text-muted text-decoration-none">About Us</a></li>
-            <li><a href="courses.html" class="text-muted text-decoration-none">Courses</a></li>
-            <li><a href="blog.html" class="text-muted text-decoration-none">Blog</a></li>
-            <li><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+            <!-- changed text-muted to text-light for better visibility -->
+            <li><a href="about.html" class="text-light text-decoration-none">About Us</a></li>
+            <li><a href="courses.html" class="text-light text-decoration-none">Courses</a></li>
+            <li><a href="blog.html" class="text-light text-decoration-none">Blog</a></li>
+            <li><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
           </ul>
         </div>
         <div class="col-md-4 mb-3">
-          <h6 class="fw-bold">Contact</h6>
-          <p class="text-muted small">📧 📧 support@educonnect.org<br>📍 Nairobi, Kenya<br>📞 +254 700 000 000</p>
+          <h6 class="fw-bold text-white">Contact</h6>
+          <!-- text-light makes this more readable on dark background -->
+          <p class="text-light small">📧 support@educonnect.org<br>📍 Nairobi, Kenya<br>📞 +254 700 000 000</p>
         </div>
       </div>
       <hr class="border-secondary"/>
-      <!-- updated copyright year -->
-       <!-- added back to top link in footer -->
-<p class="text-center mt-2">
-  <a href="#" class="text-muted small text-decoration-none">⬆️ Back to top</a>
-</p>
-<p class="text-center text-muted small mb-0">&copy; 2024–2026 EduConnect. All rights reserved.</p>
+      <p class="text-center text-light small mb-0">&copy; 2024–2026 EduConnect. All rights reserved.</p>
     </div>
   </footer>
   <!-- Dark Mode Toggle -->
@@ -224,4 +222,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>
+<!-- COOKIE BANNER - shows until user accepts -->
+<div id="cookieBanner" class="position-fixed bottom-0 start-0 end-0 bg-dark text-white p-3 d-flex justify-content-between align-items-center" style="z-index:99999;">
+  <p class="mb-0 small">🍪 We use cookies to improve your experience on EduConnect.</p>
+  <button class="btn btn-warning btn-sm ms-3" id="acceptCookies">Accept</button>
+</div>
 </html>
